@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nubank_clone_ui/pages/home/widgets/my_app_bar.dart';
+import 'package:nubank_clone_ui/widgets/my_app_bar.dart';
+import 'package:nubank_clone_ui/widgets/page_view_app.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double _screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.purple[800],
       body: Stack(
@@ -28,6 +30,9 @@ class _HomePageState extends State<HomePage> {
                 _showMenu = !_showMenu;
               });
             },
+          ),
+          PageViewApp(
+            top: _screenHeight * 0.24,
           ),
         ],
       ),
